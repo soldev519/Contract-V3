@@ -9,10 +9,10 @@ contract CTF is ERC20, Ownable {
     address public farmingContract;
     using SafeMath for uint256;
 
-    uint256 private initialMint = 26000000 * 10**18; //26m tokens minted when deployed
+    uint256 private initialMint = 23244 * 10**18; //26m tokens minted when deployed
 
-    uint256 private numTokensToMigrateV1 = 59576 * 10**18; //1,4m tokens to be migrated from v1
-    uint256 private numTokensToMigrateV2 = 59000000 * 10**18; //59m tokens to be migrated from v2
+    uint256 private numTokensToMigrateV1 = 1439 * 10**18; //1,4m tokens to be migrated from v1
+    uint256 private numTokensToMigrateV2 = 61717 * 10**18; //59m tokens to be migrated from v2
 
     uint256 private migratedV1;
     uint256 private migratedV2;
@@ -31,7 +31,7 @@ contract CTF is ERC20, Ownable {
 
     function mint(address _to, uint256 _amt) public {
         require(farmingContract == msg.sender, "You are not authorised to mint");
-        require(totalSupply().add(_amt) <= 86400000 * (10**18) , "Unable to mint more"); // total supply = 86.4m
+        require(totalSupply().add(_amt) <= 86400 * (10**18) , "Unable to mint more"); // total supply = 86.4k
         _mint(_to, _amt);
     }
 
