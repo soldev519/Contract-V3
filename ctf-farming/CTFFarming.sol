@@ -213,7 +213,7 @@ contract CTFFarm is Ownable {
             CTFPerBlock.mul(pool.allocPoint).div(totalAllocPoint);
 
         // staker share
-        uint256 teamReward = ctfReward.mul(teamShare).div(10000);
+        //uint256 teamReward = ctfReward.mul(teamShare).div(10000);
         
         //if(ctf.balanceOf(address(this)) >= teamReward)
         //    ctf.transfer(teamRewardsReceiver, teamReward); 
@@ -226,9 +226,9 @@ contract CTFFarm is Ownable {
         
         
         // mint reward for stakers
-        ctf.mint(address(this), ctfReward.sub(teamReward));
+        //ctf.mint(address(this), ctfReward.sub(teamReward));
         // mint reward of the team
-        ctf.mint(teamRewardsReceiver, teamReward);
+        //ctf.mint(teamRewardsReceiver, teamReward);
     }
 
     // Deposit Tokens for CTF allocation.
